@@ -1,0 +1,17 @@
+@import  "tailwindcss";
+
+.bg-gradient{
+   @apply bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500;
+}
+.input-box{
+    @apply w-full p-2 border mb-3 rounded;
+}
+.flex-center{
+    @apply flex justify-center items-center;
+}
+.button-main{
+    @apply text-white rounded-md ring text-2xl px-2 mx-2 focus:ring-blue-500;
+}
+.h1-main{
+    @apply text-2xl sm:text-4xl  md:text-5xl lg:text-7xl
+}
