@@ -2,7 +2,7 @@ import React from 'react';
 import { Home, User, Plus, LogOut } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
-
+import { useNavigate } from 'react-router-dom';
 export default function Sidebar() {
   const { Logout } = React.useContext(AuthContext);
   const navigate = useNavigate();
