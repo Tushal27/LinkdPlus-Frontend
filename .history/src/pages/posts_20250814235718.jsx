@@ -70,16 +70,16 @@ export default function Posts() {
   return (
     <Layout> 
     <div className="min-h-screen  bg-gradient-to-r from-purple-600 to-pink-400 p-10 flex justify-center">
-      <div className="flex justify-end flex-col md:flex-row gap-8 w-full max-w-6xl">
+      <div className="flex flex-col md:flex-row gap-8 w-full max-w-6xl">
         
         {/* Left Profile */}
-        <div className="hidden xl:block  w-1/3">
+        <div className="hidden md:block w-1/3">
           {profile && (
             <div className="bg-white/20 backdrop-blur-md p-5 rounded-xl shadow-lg text-center">
               <img
-                src={profile.avatar ? `https://res.cloudinary.com/dhclzl4nf/${profile.avatar}` : "https://res.cloudinary.com/dhclzl4nf/image/upload/v1755195340/profileplaceholder-removebg-preview_kbbfpt"}
+                src={`https://res.cloudinary.com/dhclzl4nf${profile.avatar}`}
                 alt="Avatar"
-                className="w-24 h-24 objecct-fill rounded-full mx-auto mb-3 border-4 border-white shadow-lg"
+                className="w-24 h-24 rounded-full mx-auto mb-3 border-4 border-white shadow-lg"
               />
               <h2 className="text-xl font-bold text-white">
                 {profile.first_name} {profile.last_name}

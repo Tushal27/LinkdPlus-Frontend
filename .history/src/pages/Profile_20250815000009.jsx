@@ -82,9 +82,9 @@ export default function Profile() {
         {/* Profile Header */}
         <div className="flex flex-col md:flex-row gap-6 items-center mb-6">
           <img
-            src={profile.avatar ? `https://res.cloudinary.com/dhclzl4nf/${profile.avatar}` : "https://res.cloudinary.com/dhclzl4nf/image/upload/v1755195340/profileplaceholder-removebg-preview_kbbfpt"}
+            src={profile.avatar ? `https://res.cloudinary.com/dhclzl4nf/${profile.avatar}` : "https://via.placeholder.com/150"}
             alt="Avatar"
-            className="w-28 h-28 rounded-full object-fill border-4 border-purple-500"
+            className="w-28 h-28 rounded-full object-cover border-4 border-purple-500"
           />
           <div className="text-center md:text-left flex-1">
             <h1 className="text-2xl font-bold text-gray-800">

@@ -65,8 +65,7 @@ export default function EditProfile() {
               src={
                 currentAvatar
                   ? `https://res.cloudinary.com/dhclzl4nf/${currentAvatar}` 
-                  :"https://res.cloudinary.com/dhclzl4nf/image/upload/v1755195340/profileplaceholder-removebg-preview_kbbfpt"
-
+                  : "https://www.kindpng.com/picc/m/722-7221920_placeholder-profile-image-placeholder-png-transparent-png.png"
               }
               alt="Avatar"
               className="w-28 h-28 rounded-full object-fill border-4 border-purple-400 mb-3"

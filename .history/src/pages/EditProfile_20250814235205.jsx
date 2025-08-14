@@ -12,7 +12,6 @@ export default function EditProfile() {
   });
   const [avatar, setAvatar] = useState(null);
   const [currentAvatar, setCurrentAvatar] = useState(null);
-  console.log(`https://res.cloudinary.com/dhclzl4nf${currentAvatar}`)
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -64,12 +63,13 @@ export default function EditProfile() {
             <img
               src={
                 currentAvatar
-                  ? `https://res.cloudinary.com/dhclzl4nf/${currentAvatar}` 
-                  :"https://res.cloudinary.com/dhclzl4nf/image/upload/v1755195340/profileplaceholder-removebg-preview_kbbfpt"
-
+                  ? `https://res.cloudinary.com/dhclzl4nf${currentAvatar}` 
+                  : "https://www.kindpng.com/picc/m/722-7221920_placeholder-profile-image-placeholder-png-transparent-png.png"
               }
+              {consol.log(`https://res.cloudinary.com/dhclzl4nf${currentAvatar}`);}
+
               alt="Avatar"
-              className="w-28 h-28 rounded-full object-fill border-4 border-purple-400 mb-3"
+              className="w-28 h-28 rounded-full object-cover border-4 border-purple-400 mb-3"
             />
             <label className="bg-gradient-to-r from-pink-500 to-purple-500 px-4 py-2 rounded-lg text-white cursor-pointer hover:opacity-90">
               Change Photo
