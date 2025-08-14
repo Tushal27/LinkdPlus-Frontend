@@ -18,7 +18,6 @@ export default function Posts() {
         const resProfile = await api.get("/profile/");
         setProfile(resProfile.data);
         const resPosts = await api.get("/posts/");
-        console.log(resPosts.data);
         setPosts(resPosts.data);
       } catch (err) {
         console.error("Error fetching data:", err);
@@ -73,7 +72,7 @@ export default function Posts() {
       <div className="flex flex-col md:flex-row gap-8 w-full max-w-6xl">
         
         {/* Left Profile */}
-        <div className="hidden md:block w-1/3">
+        <div className="hidden min-xl:block w-1/3">
           {profile && (
             <div className="bg-white/20 backdrop-blur-md p-5 rounded-xl shadow-lg text-center">
               <img
@@ -91,7 +90,7 @@ export default function Posts() {
         </div>
 
         {/* Posts Section */}
-        <div className="w-full  md:w-2/3">
+        <div className="w-full flex justify-end md:w-2/3">
           {/* Create Post */}
           <div className="bg-white/20 backdrop-blur-md p-5 rounded-xl shadow-lg mb-6">
             <input

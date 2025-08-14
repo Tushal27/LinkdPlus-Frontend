@@ -18,7 +18,6 @@ export default function Posts() {
         const resProfile = await api.get("/profile/");
         setProfile(resProfile.data);
         const resPosts = await api.get("/posts/");
-        console.log(resPosts.data);
         setPosts(resPosts.data);
       } catch (err) {
         console.error("Error fetching data:", err);

@@ -12,10 +12,13 @@ export default function EditProfile() {
   });
   const [avatar, setAvatar] = useState(null);
   const [currentAvatar, setCurrentAvatar] = useState(null);
+  const [previewAvatar, setPreviewAvatar] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // Load profile data
   useEffect(() => {
-    api.get("/profile/")
+    api
+      .get("/profile/")
       .then((res) => {
         setForm({
           first_name: res.data.first_name || "",
@@ -23,25 +26,38 @@ export default function EditProfile() {
           bio: res.data.bio || "",
           email: res.data.email || "",
         });
-        setCurrentAvatar(res.data.avatar);
+        setCurrentAvatar(res.data.avatar); // Cloudinary URL or null
       })
       .catch((err) => console.error("Error fetching profile:", err));
   }, []);
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-  const handleAvatarChange = (e) => setAvatar(e.target.files[0]);
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+
+  // Handle avatar file change and preview
+  const handleAvatarChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setAvatar(file);
+      setPreviewAvatar(URL.createObjectURL(file));
+    }
+  };
 
   const handleSave = async () => {
     setLoading(true);
     const formData = new FormData();
-    Object.entries(form).forEach(([key, value]) => formData.append(key, value));
+    Object.entries(form).forEach(([key, value]) =>
+      formData.append(key, value)
+    );
     if (avatar) formData.append("avatar", avatar);
 
     try {
       const res = await api.patch("/profile/", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      if (res.status === 200) navigate("/profile");
+      if (res.status === 200) {
+        navigate("/profile");
+      }
     } catch (err) {
       console.error("Profile update failed:", err);
       alert("Failed to update profile. Please try again.");
@@ -62,8 +78,10 @@ export default function EditProfile() {
           <div className="flex flex-col items-center md:w-1/3">
             <img
               src={
-                currentAvatar
-                  ? `https://res.cloudinary.com/dhclzl4nf${currentAvatar}`
+                previewAvatar
+                  ? previewAvatar
+                  : currentAvatar
+                  ? currentAvatar
                   : "https://via.placeholder.com/150"
               }
               alt="Avatar"
@@ -71,7 +89,12 @@ export default function EditProfile() {
             />
             <label className="bg-gradient-to-r from-pink-500 to-purple-500 px-4 py-2 rounded-lg text-white cursor-pointer hover:opacity-90">
               Change Photo
-              <input type="file" onChange={handleAvatarChange} className="hidden" />
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleAvatarChange}
+                className="hidden"
+              />
             </label>
           </div>
 

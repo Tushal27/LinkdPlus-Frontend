@@ -22,7 +22,7 @@ export default function Sidebar() {
 
       <Link to="/profile" className="flex items-center gap-2 hover:opacity-80 transition">
         <User size={20} />
-        <span className="hidden :block text-md font-medium">Profile</span>
+        <span className="hidden lg:block text-md font-medium">Profile</span>
       </Link>
 
 

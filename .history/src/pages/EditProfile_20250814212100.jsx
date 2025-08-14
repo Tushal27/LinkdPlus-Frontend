@@ -63,7 +63,7 @@ export default function EditProfile() {
             <img
               src={
                 currentAvatar
-                  ? `https://res.cloudinary.com/dhclzl4nf${currentAvatar}`
+                  ? currentAvatar
                   : "https://via.placeholder.com/150"
               }
               alt="Avatar"
