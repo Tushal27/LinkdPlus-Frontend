@@ -54,7 +54,7 @@ export default function CommentsDrawer({ postId, onClose }) {
               <img
                 src={
                   c.author_avatar
-                    ? `https://res.cloudinary.com/dhclzl4nf/${c.author_avatar}`
+                    ? `${c.author_avatar}`
                     : "https://res.cloudinary.com/dhclzl4nf/image/upload/v1755195340/profileplaceholder-removebg-preview_kbbfpt"
 
                 }
