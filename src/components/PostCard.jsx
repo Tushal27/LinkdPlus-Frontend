@@ -29,7 +29,7 @@ export default function PostCard({ post, handleLike, handleDislike, setSelectedP
       {/* Author Section */}
       <div className="flex items-center mb-4">
         <img
-            src={post.author_avatar ? `https://res.cloudinary.com/dhclzl4nf/${post.author_avatar}` : "https://res.cloudinary.com/dhclzl4nf/image/upload/v1755195340/profileplaceholder-removebg-preview_kbbfpt"}
+            src={post.author_avatar ? `${post.author_avatar}` : "https://res.cloudinary.com/dhclzl4nf/image/upload/v1755195340/profileplaceholder-removebg-preview_kbbfpt"}
           alt="avatar"
           className="w-12 h-12 rounded-full border-2 border-white shadow-md mr-3 cursor-pointer hover:scale-105 transition"
         />
