@@ -2,14 +2,14 @@
 
 # 🔗 LinkdPlus — Frontend
 
-**A career social networking platform — live and serving real users**
+**A career social networking platform — React frontend**
 
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-Build_Tool-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
 
-### 🌐 [linkd-plus-frontend.vercel.app](https://linkd-plus-frontend.vercel.app)
+> **Status: archived.** The hosted Django backend is offline, so the deployed frontend loads but cannot fetch any data. This repository is the source code and architecture.
 
 📦 **Backend Repo →** [LinkdPLus_backend](https://github.com/Tushal27/LinkdPLus_backend)
 
